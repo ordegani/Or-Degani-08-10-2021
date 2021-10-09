@@ -1,11 +1,14 @@
 import './App.css';
 import {useSelector} from 'react-redux';
+import savedReducer from './reducers/savedReducer';
 
-const locationReducer = useSelector(state => state.location)
 function App() {
+  const savedReducer = useSelector(state => state.savedReducer);
+  return(
   <div className="app">
-    <h1>{locationReducer}</h1>
+    <h1>{savedReducer}</h1>
   </div>
+  );
 }
 
 export default App;

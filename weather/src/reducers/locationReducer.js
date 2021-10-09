@@ -4,7 +4,7 @@ const query = "";
 function locationReducer(state = { value: "Tel Aviv" }, action) {
   switch (action.type) {
     case "location/query":
-      return { value: { query } };
+      return { value: query };
       default:
       return state;
   }

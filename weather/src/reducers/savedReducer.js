@@ -1,6 +1,6 @@
 import { createStore } from "redux";
 
-function savedReducer(state = { value: [] }, action) {
+function savedReducer(state = { value: ["1"] }, action) {
     switch (action.type) {
       case "location/save":
         return { value: [ ...state]};
