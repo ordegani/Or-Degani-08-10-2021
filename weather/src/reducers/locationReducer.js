@@ -5,7 +5,7 @@ function locationReducer(state = { value: "Tel Aviv" }, action) {
     case "location/query":
       return { value: { query } };
       default:
-      return false;
+      return state;
   }
 }
 
