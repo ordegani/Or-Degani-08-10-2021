@@ -6,12 +6,6 @@ function locationReducer(state = { value: "Tel Aviv" }, action) {
       return { value: { query } };
   }
 }
-function savedReducer(state = { value: [INIT_STATE] }, action) {
-  switch (action.type) {
-    case "location/save":
-      return { value: [... state]};
-  }
-}
 
 let store = createStore(locationReducer);
 
