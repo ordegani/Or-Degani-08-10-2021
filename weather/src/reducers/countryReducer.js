@@ -1,13 +1,20 @@
 import { createStore } from "redux";
 
-function countryReducer(state = { value: "" }, action) {
+function locationReducer(state = { value: "Tel Aviv" }, action) {
   switch (action.type) {
-    case "country/query":
+    case "location/query":
       return { value: { query } };
   }
 }
+function savedReducer(state = { value: [] }, action) {
+  switch (action.type) {
+    case "location/save":
+      return { value: [state.value + {location}]};
+  }
+}
 
-let store = createStore(countryReducer);
+let store = createStore(locationReducer);
 
 store.subscribe(() => console.log(store.getState()));
-store.dispatch({ type: "country/query" });
+
+store.dispatch({ type: "location/query" });
