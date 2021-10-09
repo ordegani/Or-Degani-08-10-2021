@@ -1,9 +1,11 @@
 import { createStore } from "redux";
 
-function savedReducer(state = { value: [INIT_STATE] }, action) {
+function savedReducer(state = { value: [] }, action) {
     switch (action.type) {
       case "location/save":
-        return { value: [... state]};
+        return { value: [ ...state]};
+        default:
+            return state;
     }
   }
 
@@ -13,7 +15,7 @@ store.subscribe(() => console.log(store.getState()));
 
 store.dispatch({ type: "savedReducer" });
 
-
+export default savedReducer;
 
 
 
