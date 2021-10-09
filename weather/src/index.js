@@ -5,6 +5,8 @@ import App from './App';
 import {createStore} from 'redux';
 import allReducers from './reducers';
 
+const store = createStore();
+
 ReactDOM.render(
   <React.StrictMode>
     <App />
