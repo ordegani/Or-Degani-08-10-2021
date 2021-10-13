@@ -6,3 +6,5 @@ export default combineReducers({
 locationReducer,
 savedReducer
 })
+
+store.dispatch({ type: "combineReducers" });

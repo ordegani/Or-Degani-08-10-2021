@@ -1,6 +1,7 @@
 import './App.css';
 import {useSelector, useDispatch} from 'react-redux';
-import LocationQuery from './actions/locationQuery';
+import LocationQuery from './actions';
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 function App() {
   const dispatch = useDispatch();
@@ -9,6 +10,9 @@ function App() {
   <div className="app">
     <h1>Choose location: {locationReducer.value}</h1>
     <button onClick={()=> dispatch(LocationQuery())}>search</button>
+    <div className="resultsContainer">
+
+    </div>
   </div>
   );
 }
