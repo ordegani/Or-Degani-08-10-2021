@@ -1,10 +1,8 @@
-import { combineReducers } from 'redux'
-import  locationReducer  from './locationReducer';
-import savedReducer
- from './savedReducer';
-export default combineReducers({
-locationReducer,
-savedReducer
-})
+import { combineReducers } from "redux";
+import locationReducer from "./locationReducer";
+import savedReducer from "./savedReducer";
 
-store.dispatch({ type: "combineReducers" });
+export default combineReducers({
+  locationReducer,
+  savedReducer,
+});

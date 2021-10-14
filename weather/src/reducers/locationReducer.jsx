@@ -1,28 +1,26 @@
 import { createStore } from "redux";
 
-function LocationReducer(state = { value: "Tel Aviv", results:[] }, action) {
-  
+function LocationReducer(state = { value: "Tel%20Aviv", results: [] }, action) {
   switch (action.type) {
     case "LocationQuery":
       const query = "";
 
       const getWeather = async () => {
-        const key='Uc9kVWewJlSYXyFkbmILsnpmWj16RD8p'
+        const key = "ESB92vSyAzvdougQnAYADVpNntkA9QzC";
         const response = await fetch(
-          `http://dataservice.accuweather.com/currentconditions/v1/${state.value}?apikey=${key}&language=en`
+          `http://dataservice.accuweather.com/locations/v1/cities/search?apikey=${key}&q=${state.value}`
         );
         const data = await response.json();
 
-
-          console.log(data.hits);
-
+        console.log(response.data);
       };
       getWeather();
-      return { value: {query} };
-      default:
+      return { value: { query } };
+    default:
       return state;
   }
 }
-
+const store = createStore(LocationReducer, ["Use Redux"]);
+store.dispatch({ type: "LocationReducer" });
 
 export default LocationReducer;
