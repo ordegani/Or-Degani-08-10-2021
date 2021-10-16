@@ -1,7 +1,4 @@
-
-const LocationQuery = () =>{
-    return {type:'LocationQuery'
-    }
-
-}
+const LocationQuery = () => {
+  return { type: "LocationQuery" };
+};
 export default LocationQuery;
