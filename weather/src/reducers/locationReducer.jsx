@@ -12,7 +12,7 @@ function LocationReducer(state = { value: "Tel%20Aviv", results: [] }, action) {
         );
         const data = await response.json();
 
-        console.log(response.data);
+        console.log(response);
       };
       getWeather();
       return { value: { query } };
