@@ -4,6 +4,7 @@ function LocationReducer(state = { value: "Tel%20Aviv", results: [] }, action) {
   switch (action.type) {
     case "LocationQuery":
       const query = "";
+      const search="Tel Aviv";
 
       const getWeather = async () => {
         const key = "ESB92vSyAzvdougQnAYADVpNntkA9QzC";
@@ -12,10 +13,20 @@ function LocationReducer(state = { value: "Tel%20Aviv", results: [] }, action) {
         );
         const data = await response.json();
 
-        console.log(response);
+        console.log(data[0].GeoPosition);
       };
+        case "LocationSearch":
+        const getSearch = (e) => {
+          e.preventDefault();
+          query = search;
+          search = ("");
+        };
+  
       getWeather();
-      return { value: { query } };
+      const LocationSearch= (e) => {
+        search = (e.target.value);
+      };
+      return { value: query };
     default:
       return state;
   }
